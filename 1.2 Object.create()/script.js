@@ -1,6 +1,6 @@
 /* ===== Untuk mengatasi problem Function Declaration ===== */
 
-// object untuk method
+// object literal untuk method
 const methodMahasiswa = {
   makan: function (porsi) {
     this.energi += porsi;
@@ -16,15 +16,13 @@ const methodMahasiswa = {
   },
 };
 
+/* ===== PROBLEM : sebenarnya hanya butuh object Mahasiswa, tidak butuh object method nya . Seolah-olah kita kerja 2 kali. Sebenarnya ada cara lain agar tidak bikin object lain untuk dihubungkan ke object Mahasiswa, yaitu dengan Prototype ===== */
+
 // function declaration
 function Mahasiswa(nama, energi) {
-  let mahasiswa = {};
+  let mahasiswa = Object.create(methodMahasiswa); // sama membuat object, bisa isi parameter
   mahasiswa.nama = nama;
   mahasiswa.energi = energi;
-  mahasiswa.makan = methodMahasiswa.makan;
-  mahasiswa.main = methodMahasiswa.main;
-  // PROBLEM: kalo ada method baru, mau gamau harus didaftarin disini
-  mahasiswa.tidur = methodMahasiswa.tidur;
 
   return mahasiswa;
 }
@@ -32,5 +30,7 @@ function Mahasiswa(nama, energi) {
 let object1 = Mahasiswa("Bayu", 10);
 
 /* ===== Noted 
-- setiap menjalankan program, object method akan disimpan sekali di memori. Jadi saat memanggil method didalam function declaration hanya mengacu ke memori, tidak dibuat ulang
+- bagaimana cara membuat agar object function declaration Mahasiswa bisa mengenali object literal methodMahasiswa adalah kepunyaannya dia. 
+- yaitu dengan cara otomatis menggunakan Object.create() 
+- menggunakan konsep pewarisan. Jadi, parameter Object.create() bisa menghubungkan parent nya
 ===== */
