@@ -27,7 +27,7 @@ console.log(jumlahHuruf);
 let jumlahHuruf = mahasiswa.map((nama) => nama.length);
 console.log(jumlahHuruf);
 
-// jika mengembalikan dalam bentuk object
+// jika mengembalikan dalam bentuk Object
 let jumlahHuruf = mahasiswa.map((namaObject) => ({
   nama: namaObject,
   jmlHuruf: namaObject.length,
