@@ -1,29 +1,25 @@
-/* ===== Function Declaration ===== */
+/* ===== Constructor Function ===== */
 function Mahasiswa(nama, energi) {
-  // deklarasikan dulu kalo ingin buat object dengan object kosongan
-  let mahasiswa = {};
-  // isi properti
-  mahasiswa.nama = nama;
-  mahasiswa.energi = energi;
-  // isi method
-  mahasiswa.makan = function (porsi) {
+  this.nama = nama;
+  this.energi = energi;
+
+  this.makan = function (porsi) {
     this.energi += porsi;
     console.log(`Halo ${this.nama}, selamat makan!`);
   };
-  mahasiswa.main = function (jam) {
+  this.main = function (jam) {
     this.energi -= jam;
-    console.log(`Halo ${this.nama}, selamat main!`);
+    console.log(`Halo ${this.nama}, selamat bermain!`);
   };
-  // return
-  return mahasiswa;
 }
-// instansiasi object
-let object1 = Mahasiswa("Bayu", 10);
-let object2 = Mahasiswa("Fauziah", 50);
+
+let object1 = new Mahasiswa("Bayu", 10);
+let object2 = new Mahasiswa("Fauziah", 50);
 
 /* ===== Noted 
-- cukup bikin template/blueprint satu aja
-- kalau ingin bikin object baru, tinggal instansiasi namanya aja
-- biasanya ketika instansiasi object akan sekaligus mengirim argument, yang kemudian dijadikan sebagai parameter function nya
-- harus ada return, karena untuk memasukkan/mengembalikan data-data object (nama,energi) ke object utamanya
+- menggunakan keyword new
+- sebetulnya mirip banget dengan functiond declaration
+- ini paling sering digunakan
+- tidak perlu menuliskan deklarasi variabel dan return nya.
+- this akan mengacu ke objectnya yakni Mahasiswa
 ===== */
