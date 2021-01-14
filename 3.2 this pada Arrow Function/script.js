@@ -1,12 +1,19 @@
-// test konsep this arrow function menggunakan Object Literal
-const mhs1 = {
-  nama: "Bayu",
-  umur: 24,
-  sayHello: () => {
+// test this arrow function menggunakan Constructor Function
+const Mahasiswa = function () {
+  this.nama = "Bayu";
+  this.umur = 24;
+  this.sayHello = function () {
     console.log(`Halo, nama saya ${this.nama}, dan saya ${this.umur} tahun.`);
-    // hasil console log adalah undefined
-    // Karena this tidak mencari ke lexical scopenya.
-    // Dan Arrow Function tidak memiliki konsep this, maka this.nama dan this.umur akan mencari keatas.
-    // dia akan mencari terus sampai ke window. Karena di window tidak ditemukan this.umur dan this.nama, maka hasilnya undefined.
-  },
+    // karena Function Expression memiliki konsep This, maka this akan mengacu ke Object Mahasiswa, dan memiliki this.nama dan this.umur
+    // Function Expression tidak akan kena hoisting, karena disimpan dalam variabel
+  };
+
+  // Kasus lagi, jika menambahkan function yang otomatis dijalankan. Setiap interval akan menjalankan isi functionnya.
+  // Menggunakan Function Declaration, dan akan kena hoisting. Sehingga pada saat this dipanggil, dia akan mengecek ke global
+  setInterval(function () {
+    console.log(this.umur++);
+    // Hasilnya NaN
+  }, 500);
+  //
 };
+const objectBayu = new Mahasiswa();
