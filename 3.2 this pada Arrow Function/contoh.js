@@ -5,7 +5,7 @@ box.addEventListener("click", function () {
   let dua = "caption";
 
   if (this.classList.contains(satu)) {
-    [satu, dua] = [duas, satu];
+    [satu, dua] = [dua, satu];
   }
 
   this.classList.toggle("size");
