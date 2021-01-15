@@ -1,24 +1,33 @@
-/* ===== dari code sebelumnya ===== */
-// PROBLEM sebelumnya : dengan membuat Object.create() seolah kita mengelola 2 object yang berbeda yaitu Object Mahasiswa dan Object Method Mahasiswa. Dan sebenarnya kita hanya menginginkan Object Mahasiswa nya saja.
+// ubah konsep Prototype Inheritance menjadi Class pada konsep Object Oriented Programming
 
-// Memanfaatkan method untuk mengelola method
-function Mahasiswa(nama, energi) {
-  this.nama = nama;
-  this.energi = energi;
+class Mahasiswa {
+  // CONSTRUCTOR : method wajib yang akan dijalankan ketika instansiasi object pertama kali, berisi properti yang wajib/melekat pada object
+  constructor(nama, energi) {
+    this.nama = nama;
+    this.energi = energi;
+  }
+
+  // METHOD TAMBAHAN : method nya langsung ditulis dibawah
+  makan(porsi) {
+    this.energi += porsi;
+    return `Halo ${this.nama}, selamat makan!`;
+  }
+  main(jam) {
+    this.energi -= jam;
+    return `Halo ${this.nama}, selamat bermain!`;
+  }
+  tidur(jam) {
+    this.energi += jam * 2;
+    return `Halo ${this.nama}, selamat tidur!`;
+  }
 }
-Mahasiswa.prototype.makan = function (porsi) {
-  this.energi += porsi;
-  return `Halo ${this.nama}, selamat makan!`;
-};
-Mahasiswa.prototype.main = function (jam) {
-  this.energi -= jam;
-  return `Halo ${this.nama}, selamat bermain!`;
-};
-Mahasiswa.prototype.tidur = function (jam) {
-  this.energi += jam * 2;
-  return `Halo ${this.nama}, selamat tidur!`;
-};
-let object = new Mahasiswa("Bayu", 10);
 
-// method makan sudah otomatis dimasukkan kedalam Prototype, dan langsung menempel dengan Object Mahasiswa.
-// Sehingga jika kita tulis object.makan(3), maka methodnya langsung terpanggil
+// instansiasi object baru
+let object1 = new Mahasiswa("Bayu", 10);
+let object2 = new Mahasiswa("Fauziah", 50);
+
+/* ===== Noted 
+- Prototype ini mirip dengan Kelas untuk Object Oriented Programming
+- Tapi, kenapa Javascript tidak menganut konsep Kelas? karena javascript hanya dibuat selama 1 minggu.
+- sebenarnya versi kelas ini, dibelakang layar menjalankan Prototype
+===== */
