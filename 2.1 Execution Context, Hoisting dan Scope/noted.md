@@ -12,8 +12,8 @@ Javascript akan mengecek di dalam program terdapat :
 
 * Jika ada VARIABEL : beri isi UNDEFINED
 * Jika ada FUNCTION : beri isi code FUNCTION itu sendiri
-* Konsep pengecekan oleh Javascript disebut HOISTING (Pengangkatan).
-* Jadi, Javascript akan melakukan screening terhapad variabel dan function, tetapi tanpa mempedulikan isi/value dari variabel tersebut.
+* Konsep pengecekan oleh Javascript disebut HOISTING (Pengangkatan). Tujuannya untuk mengangkat dulu ke memorinya tanpa ada isi/nilainya.
+* Jadi, Javascript akan melakukan screening terhadap variabel dan function, tetapi tanpa mempedulikan isi/value dari variabel tersebut.
 
 # Catatan tambahan
 
@@ -23,3 +23,4 @@ Javascript akan mengecek di dalam program terdapat :
 # Fase Execution
 
 Setelah Javascript melakukan screening variabel & function pada Fase Creation, kemudian dilanjutkan dengan Fase Execution. Dimana pada fase ini perintah seperti console.log akan dijalankan atau eksekusi.
+Pada fase ini programnya akan dieksekusi mulai dari atas sampai bawah.
