@@ -1,23 +1,18 @@
-/* ===== Lexical Scope ===== */
 function init() {
   let nama = "Bayu";
+  let umur = 24;
   function tampilNama() {
     console.log(nama);
+    console.log(umur);
   }
-  tampilNama();
+  console.dir(tampilNama);
 }
 init();
 
-// Hasilnya adalah Bayu
+// Hasilnya adalah Object tampilNama() yang dibuat oleh Javascript
 
 /* ===== Noted 
-- HOISTING function init()
-- EXECUTION init()
-- masuk function init()
-- HOISTING nama = UNDEFINED, dan function tampilNama()
-- EXECUTION tampilNama()
-- masuk ke function tampilNama(), tidak ada HOISTING, langsung EXECUTION console.log(nama). Cari nama di LOCAL tampilNama, cari di parameter FUNCTION tampilNama, terus cari di LOCAL FUNCTION init(), dan ketemu yakni Bayu.
+- jika console.dir maka akan tampil Object tampiNama() yang isinya ada Closure
+- KENAPA ada CLOSURE? karena function tampilNama membutuhkan data nama dan data umur dari PARENT nya yaitu function init()
 
-- console.log(nama) membutuhkan data nama, sedangkan di LOCAL nya tidak ada. Kemudian cari diatas yakni function PARENT nya.
-- Proses tersebut di namakan CLOSURE
 ===== */
