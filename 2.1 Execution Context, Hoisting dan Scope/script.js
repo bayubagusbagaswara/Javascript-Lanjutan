@@ -1,37 +1,39 @@
-/* ===== Contoh Kasus ===== */
+/* ===== Contoh Kasus 2 ===== */
+function a() {
+  console.log("ini a");
 
-let nama = "Bayu";
-let username = "@bayu_bagaswara";
+  function b() {
+    console.log("ini b");
 
-function cetakURL(username) {
-  let twitterURL = "http://twitter.com/";
-  return twitterURL + username;
+    function c() {
+      console.log("ini c");
+    }
+    // start 3
+    c();
+  }
+  // start 2
+  b();
 }
+// start 1
+a();
 
-console.log(cetakURL(username));
+/* ===== Noted : Function di dalam Function 
+- Urutan hasil dari function diatas adalah ini a, ini b, ini c
 
-/* ===== Noted : Urutan proses Visualize code nya
-1.  Proses CREATION dengan Hoisting mengambil variabel(nama dan username) diisi UNDEFINED dan function cetakURL diisi code dalam function itu sendiri.
+- PENJELASAN
+- cek MULAI dari GLOBAL CONTEXT
+- panggil/masuk ke a()
+- HOISTING dulu seluruh isi di function a, yakni console.log('ini a') dan function b. Jadi, pertama function b sudah di CREATION. Kemudian EXECUTION pada console.log('ini a')
+- TAMPILKAN ini a
+- panggil/masuk ke b()
+- HOISTING semua isi di function b, yakni console.log('ini b') dan function c. Pertama CREATION function c, kemudian EXECUTION console.log('ini b')
+- TAMPILKAN ini b
+- panggil/masuk ke c()
+- TIDAK ADA HOISTING karena di dalam function c tidak ditemukan variabel atau function lagi. Sehingga langsung masuk PROSES EXECUTION pada console.log('ini c')
+- Kalau C SELESAI maka langsung hilang dari tumpukan eksekusi EXECUTION
+- Diikuti B yang SELESAI dan hilang dari tumpukan eksekusi
+- Terakhir adalah A yang SELESAI
 
-2. Proses EXECUTION program dari atas : 
-- masukkan Bayu kedalam variabel nama
-- masukkan @bayu_bagaswara kedalam variabel username
-- function di skip dulu
-- jalanin console log
-- ketika console log di dijalankan ternyata tugasnya adalah EXECUTIN function, maka akan masuk ke dalam LOCAL EXECUTION CONTEXT milik function cetakURL.
-
-3. Proses LOCAL EXECUTION CONTEXT dalam FUNCTION cetakURL 
-a. Proses pertama yang dilakukan juga CREATION PHASE
-- username langsung diisi dengan Bayu. KENAPA? karena variabel username sudah di EXECUTION dan diisi Bayu dalam GLOBAL CONTEXT
-- lalu variabel twitterURL : diisi UNDEFINED. Ketika di EXECUTION PHASE maka diisi http://twitter.com/
-- selanjutnya CREATION return dan EXECUTION kemudia simpan hasil return ke memori. 
-
-4. Selanjutnya proses akan keluar dari LOCAL EXECUTION FUNCTION. Dan otomatis tumpukan stack eksekusi localnya hilang dari memori
-
-5. Kemudian kembali ke GLOBAL EXECUTION dan akan EXECUTION console.log cetakURL
-
-6. Tampilkan Haslinya http://twitter.com/@bayu_bagaswara
-
-7. Selesai
-
+- JADI, proses awal mulai dari a -> b -> c
+- Proses selesai dari c -> b -> a
 ===== */
