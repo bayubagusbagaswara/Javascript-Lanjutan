@@ -1,22 +1,18 @@
+console.log(sayHello());
+
 var nama = "Bayu";
 var umur = 24;
 
-// kalau code nya dipindah disini
-console.log(sayHello());
-
-/* ===== Hasilnya 
-Halo, nama saya Bayu, saya 24 tahun.
-
-- BERHASIL mengeksekusi function dan menampilkan isi variabelnya. 
-===== */
+// pada saat ketemu FUNCTION, itu seolah-olah dia menjalankan EXECUTION CONTEXT nya sendiri
 function sayHello() {
   return `Halo, nama saya ${nama}, saya ${umur} tahun.`;
-  // return untuk mengembalikan nilai dari function tersebut
 }
 
-/* ===== Noted 
-- dibelakang layar terjadi Creation Fase dulu
-- lakukan HOISTING terhadap var dan function
-- VARIABEL : akan diisi UNDEFINED
-- FUNCTION : akan diisi oleh STRING dalam function tersebut
+/* ===== Noted: perilaku jika ketemu FUNCTION
+- ketika ketemu FUNCTION, maka akan masuk kedalam FUNCTION dan menjalankan LOCAL EXECUTION CONTEXT didalam function itu sendiri.
+- function membuat Local Execution Context
+- yang di dalamnya terdapat Creation dan Execution Fase
+- di Local Function selain kita bisa akses window, kita juga punya akses ke Arguments
+- di dalam Local Function juga terjadi proses HOISTING, mengecek apakah ada VAR dan FUNCTION lagi
+
 ===== */

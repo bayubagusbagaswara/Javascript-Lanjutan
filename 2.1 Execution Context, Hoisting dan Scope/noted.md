@@ -19,6 +19,7 @@ Javascript akan mengecek di dalam program terdapat :
 
 - Javascript mendefinisikan object window = global object
 - Javascript mendefinisikan this = window
+- Untuk memahami proses HOISTING code program bisa kunjungi Javascript Visualize - Python Tutor
 
 # Fase Execution
 
