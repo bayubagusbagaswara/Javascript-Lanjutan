@@ -1,3 +1,12 @@
+// kalau function dipanggil di awal tanpa mengeksekusinya
+console.log(sayHello);
+
+/* ===== Hasilnya 
+sayHello() {
+  console.log(`Halo, nama saya ${nama}, saya${umur} tahun.`);
+}
+===== */
+
 var nama = "Bayu";
 var umur = 24;
 
