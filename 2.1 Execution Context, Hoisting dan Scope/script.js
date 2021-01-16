@@ -1,17 +1,17 @@
-// kalau function dipanggil di awal tanpa mengeksekusinya
-console.log(sayHello);
+// kalau functionnya dipanggil dan dieksekusi
+console.log(sayHello());
 
 /* ===== Hasilnya 
-sayHello() {
-  console.log(`Halo, nama saya ${nama}, saya${umur} tahun.`);
-}
+Halo, nama saya undefined, saya undefined tahun.
+
+- KENAPA? karena proses HOISTING, isi variabel nya belum dimasukkan ke dalam memori dan letak programnya setelah pemanggilan function. 
 ===== */
 
 var nama = "Bayu";
 var umur = 24;
 
 function sayHello() {
-  console.log(`Halo, nama saya ${nama}, saya${umur} tahun.`);
+  console.log(`Halo, nama saya ${nama}, saya ${umur} tahun.`);
 }
 
 /* ===== Noted 
