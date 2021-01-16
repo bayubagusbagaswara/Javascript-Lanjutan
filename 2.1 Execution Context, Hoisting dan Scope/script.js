@@ -1,39 +1,20 @@
-/* ===== Contoh Kasus 2 ===== */
-function a() {
-  console.log("ini a");
+/* ===== Kasus SCOPE ===== */
+let nama = "Bayu";
+let username = "@bayu_bagaswara";
 
-  function b() {
-    console.log("ini b");
-
-    function c() {
-      console.log("ini c");
-    }
-    // start 3
-    c();
-  }
-  // start 2
-  b();
+function cetakURL(username) {
+  let twitterURL = "http://twitter.com/";
+  return twitterURL + username;
 }
-// start 1
-a();
 
-/* ===== Noted : Function di dalam Function 
-- Urutan hasil dari function diatas adalah ini a, ini b, ini c
+console.log(cetakURL("dimas_widyatama"));
 
-- PENJELASAN
-- cek MULAI dari GLOBAL CONTEXT
-- panggil/masuk ke a()
-- HOISTING dulu seluruh isi di function a, yakni console.log('ini a') dan function b. Jadi, pertama function b sudah di CREATION. Kemudian EXECUTION pada console.log('ini a')
-- TAMPILKAN ini a
-- panggil/masuk ke b()
-- HOISTING semua isi di function b, yakni console.log('ini b') dan function c. Pertama CREATION function c, kemudian EXECUTION console.log('ini b')
-- TAMPILKAN ini b
-- panggil/masuk ke c()
-- TIDAK ADA HOISTING karena di dalam function c tidak ditemukan variabel atau function lagi. Sehingga langsung masuk PROSES EXECUTION pada console.log('ini c')
-- Kalau C SELESAI maka langsung hilang dari tumpukan eksekusi EXECUTION
-- Diikuti B yang SELESAI dan hilang dari tumpukan eksekusi
-- Terakhir adalah A yang SELESAI
+// Hasilnya adalah http://twitter.com/dimas_widyatama
 
-- JADI, proses awal mulai dari a -> b -> c
-- Proses selesai dari c -> b -> a
+/* ===== Noted  
+- KENAPA Hasilnya beda dari kasus awal? karena SCOPE
+- begitu memanggil function sekaligus mengirim argument
+- maka argument tersebut akan menjadi parameter bagi function itu sendiri
+- Sehingga nilai parameter itulah yang menjadi rujukan untuk isi program function tersebut
+
 ===== */
