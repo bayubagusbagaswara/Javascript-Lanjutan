@@ -22,3 +22,8 @@
   tampilNama();
   }
   init();
+
+* Catatan:
+
+- Closure adalah bicara tentang SCOPE. Bagaimana sebuah function bisa mengambil data dari data/variabel yang berada di function lain (Function Parentnya).
+- Makanya Closure disebut merupakan gabungan dari Function dan Lexical Scopenya.
