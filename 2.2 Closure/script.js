@@ -1,25 +1,21 @@
 /* ===== Seolah-olah mempunyai Private Method ===== */
 
-let counter = 0;
 // outer function
-let add = function () {
+let add = (function () {
   let counter = 0;
   // inner function
   return function () {
     return ++counter;
   };
-};
+})();
 
-// SOLUSINYA : simpan dulu kedalam variabel
-let a = add();
-
-console.log(a());
-console.log(a());
-console.log(a());
+console.log(add());
+console.log(add());
+console.log(add());
 
 /* ===== Noted
-- add() buat jalanin semuanya
-- sedangakan a hanya untk jalanin function nya (yang di return)
-- setiap kita jalanin inner function, counter akan selalu mengacu ke nilai counter sebelumnya. 
-- seolah-olah let counter jadi PRIVATE GAK BISA DIAKSES DARI LUAR, tapi nilainya tetap dipertahankan karena dia menjadi CLOSURE
+- sebenarnya ada cara agar tidak lagi menulis dan menyimpan kedalam variabel
+- dinamakan Immediately Invoked Function
+- dengan cara tambahin kurung () untuk bungkus function + kasing kurung kosong diakhir dan diluar function ()
+- Jadi pada saat manggil add() dia langsung menjalankan inner function nya
 ===== */
