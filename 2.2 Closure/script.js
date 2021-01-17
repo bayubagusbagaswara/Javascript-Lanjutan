@@ -5,22 +5,16 @@ function init() {
   }
   return tampilNama;
 }
-init();
+let panggilNama = init();
+panggilNama();
 
-// Hasilnya adalah Object tampilNama() yang dibuat oleh Javascript
+// Hasilnya adalah Bayu
 
 /* ===== Noted 
-- function tampilNama() sebagai INNER FUNCTION langsung dijalankan.
-- kalau function tampilNama di return tapi tidak dijalankan apa yang terjadi? Hasilnya tidak terjadi apa-apa.
-- Jadi, mengembalikan function tampilNama tanpa menjalankannya
-- saat init() dipanggil, kemudian masuk ke function init()
-- terus didalamnya kita punya function tampilNama yang masuk HOISTING
-- terus function tampilNama langsung dikembalikan/return.
-- Istilah jika langsung dikembalikan itu adalah Function Baru DIJALANKAN SEBAGIAN. Karena FUNCTION tampilNama() sudah masuk CREATION PHASE, tapi belum dieksekusi program didalam function tersebut.
+- dengan menyimpan pemanggilan function init() dalam variabel panggilNama, artinya ini baru dieksekusi sebagian (belum dieksekusi semua isi programmnya).
+- untuk menjalankan SEBAGIAN LAGI, maka EXECUTION lagi variabel panggilNama menjadi sebuah function. Jadi, akan mengeksekusi function tampilNama() yang belum dieksekusi sebelumnya.
 
-- terus BAGAIMANA agar function tampilNama() dapat dijalankan dan isi programnya bisa dieksekusi ?
-- CARANYA: dengan cara menyimpan EXECUTION FUNCTION GLOBAL kedalam VARIABEL
-
+- Hal tersebut akan memungkinkan untuk membuat function factory
 
 
 ===== */
