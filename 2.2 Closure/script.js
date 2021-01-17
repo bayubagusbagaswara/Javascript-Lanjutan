@@ -1,17 +1,16 @@
 /* ===== Function Factory ===== */
 function init() {
-  function tampilNama(nama) {
+  return function (nama) {
     console.log(nama);
-  }
-  return tampilNama;
+  };
 }
 let panggilNama = init();
 panggilNama("Bayu");
+panggilNama("Bagus");
+panggilNama("Bagaswara");
 
-// Hasilnya adalah Bayu
+// Hasilnya adalah Bayu, Bagus, Bagaswara
 
 /* ===== Noted 
-- jika memanggil dan ingin menjalankan init() aja, maka function init() akan jalan dan EXECUTION return tampilNama tanpa menjalankan function tampilNama.
-
-- Jadi, jika ingin menjalankan function panggilNama() harus diisi parameter
+- apabila hanya mengembalikan function, bisa diringkas lagi tanpa nama function, alias anonymous function. Atau function tanpa nama hanya menerima parameter.
 ===== */
