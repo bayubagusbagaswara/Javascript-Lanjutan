@@ -27,3 +27,8 @@
 
 - Closure adalah bicara tentang SCOPE. Bagaimana sebuah function bisa mengambil data dari data/variabel yang berada di function lain (Function Parentnya).
 - Makanya Closure disebut merupakan gabungan dari Function dan Lexical Scopenya.
+
+# Kenapa menggunakan Closure ?
+
+1. Untuk membuat Function Factories.
+2. Untuk membuat seolah-olah mempunyai Private Method.
