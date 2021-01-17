@@ -6,16 +6,20 @@ let add = function () {
   let counter = 0;
   // inner function
   return function () {
-    ++counter;
+    return ++counter;
   };
 };
 
-// kalo gini yang baru jalan baru function add(), inner function baru setengah
-console.log(add());
-console.log(add());
-console.log(add());
+// SOLUSINYA : simpan dulu kedalam variabel
+let a = add();
+
+console.log(a());
+console.log(a());
+console.log(a());
 
 /* ===== Noted
-- COUNTER TIDAK TERGANGGU TERCAPAI, tapi PROBLEM NYA SELALU DISET KE 0 LAGI
-- SOLUSINYA PAKE CLOSURE : Saat kita return, yang kita return adalah function
+- add() buat jalanin semuanya
+- sedangakan a hanya untk jalanin function nya (yang di return)
+- setiap kita jalanin inner function, counter akan selalu mengacu ke nilai counter sebelumnya. 
+- seolah-olah let counter jadi PRIVATE GAK BISA DIAKSES DARI LUAR, tapi nilainya tetap dipertahankan karena dia menjadi CLOSURE
 ===== */
