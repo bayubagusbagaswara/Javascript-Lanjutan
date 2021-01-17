@@ -1,20 +1,17 @@
+/* ===== Function Factory ===== */
 function init() {
-  let nama = "Bayu";
-  function tampilNama() {
+  function tampilNama(nama) {
     console.log(nama);
   }
   return tampilNama;
 }
 let panggilNama = init();
-panggilNama();
+panggilNama("Bayu");
 
 // Hasilnya adalah Bayu
 
 /* ===== Noted 
-- dengan menyimpan pemanggilan function init() dalam variabel panggilNama, artinya ini baru dieksekusi sebagian (belum dieksekusi semua isi programmnya).
-- untuk menjalankan SEBAGIAN LAGI, maka EXECUTION lagi variabel panggilNama menjadi sebuah function. Jadi, akan mengeksekusi function tampilNama() yang belum dieksekusi sebelumnya.
+- jika memanggil dan ingin menjalankan init() aja, maka function init() akan jalan dan EXECUTION return tampilNama tanpa menjalankan function tampilNama.
 
-- Hal tersebut akan memungkinkan untuk membuat function factory
-
-
+- Jadi, jika ingin menjalankan function panggilNama() harus diisi parameter
 ===== */
