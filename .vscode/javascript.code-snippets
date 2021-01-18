@@ -28,7 +28,7 @@
 	"Tag Comment Javascript":{
 		"scope": "javascript, html",
 		"prefix": "*",
-		"body": "/* ===== $1 ===== */"
+		"body": "/* =============== $1 =============== */"
 	},
 	"Tag Console Log Javascript":{
 		"scope": "javascript, html",
