@@ -8,20 +8,32 @@ let jsLanjut = videos
   })
   .reduce((total, detik) => total + detik);
 
-//   ubah format waktu
 const jam = Math.floor(jsLanjut / 3600);
-// jsLanjut = total detik awal - 2 jam * 3600 -> hasilnya detik
 jsLanjut = jsLanjut - jam * 3600;
-// jsLanjut dibagi 60
 const menit = Math.floor(jsLanjut / 60);
-// hitung detik
 const detik = jsLanjut - menit * 60;
 
+// simpan di DOM
+// masukkan jam menit detik
+const pDurasi = document.querySelector(".total-durasi");
+pDurasi.textContent = `${jam} Jam, ${menit} Menit, ${detik} Detik`;
+
+// hitung jumlah video
+const jmlVideo = videos.filter((video) =>
+  video.textContent.includes("Javascript Lanjutan")
+).length;
+const pJmlVideo = document.querySelector(".jumlah-video");
+pJmlVideo.textContent = `${jmlVideo} Video`;
 console.log(detik);
 
 /* =============== Noted
-- ubah formatnya menjadi Jam Menit Detik
-- pertama bagi waktu menjadi jam dulu dengan bagi 3600 dan dibulatkan Math.floor(pembulatan ke bawah)
-- sisanya hitung untuk menit. jsLanjut - 2 * 3600. Hasilnya detik, kemudia jadikan menit dengan cara bagi 60
-- sisanya lagi adalah detik
+- simpan di DOM
+- cari elemen class nya total-durasi
+- isi textContentnya dengan Jam Menit Detik
+
+- hitung jumlah Video
+- ambil data array yg sudah difilter tadi karena filter Javascript Lanjutan
+- kemudian hitung dengan tambahkan function length
+- cari elemen class jumlah-video
+- isi textContentnya dengan jumlah Video
 =============== */
