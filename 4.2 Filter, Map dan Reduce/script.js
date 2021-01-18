@@ -1,15 +1,29 @@
-/* =============== Map =============== */
+/* =============== Reduce =============== */
 const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
-const newAngka = angka.map((a) => {
-  return a * 2;
-});
+const newAngka = angka.reduce((accumulator, currentValue) => {
+  console.log(`Jumlah angka = ${accumulator}`);
+  console.log(`Isi Elemen sekarang = ${currentValue}`);
+  console.log(
+    `Jumlah = ${accumulator} + ${currentValue} = ${accumulator + currentValue}`
+  );
+  console.log("===");
 
-console.log(newAngka);
-// Hasilnya [-2, 16, 18, 2, 8, -10, -8, 6, 4, 18]
-console.log(angka); // tidak mengubah isi array angka
+  return accumulator + currentValue;
+}, 5); // sebenarnya ada nilai default untuk menentukan nilai awal, misal ditulis 5
+console.log(`Total jumlah elemen = ${newAngka}`);
+
+/* =============== Code sederhananya =============== */
+const newAngka1 = angka.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  5
+);
+console.log(`Total jumlah elemen = ${newAngka1}`);
 
 /* =============== Noted 
-- kita akan memetakan tiap-tiap elemen di dalam array nya menggunakan fungsi yang baru
-- kalikan semua elemen array dengan 2, angka * 2 
+- Reduce : melakukan sesuatu terhadap seluruh elemen pada array nya
+- pengennya jumlahkan semua elemen array nya
+- Reduce punya 2 argument,
+- Argument/parameter 1 adalah Accumulator (hasil dari prosesnya, seperti penjumlahannya). Hasil akumulasinya
+- Argument/parameter 2 adalah Current Value (elemen array yang sedang dilooping / saat ini)
 =============== */
