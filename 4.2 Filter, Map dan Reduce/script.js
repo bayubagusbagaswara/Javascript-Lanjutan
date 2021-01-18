@@ -2,9 +2,9 @@
 
 const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
-// menggunakan Filter
-const newAngka = angka.filter(function (a) {
-  return a >= 3;
+// menggunakan Filter dan diubah menjadi Arrow Function
+const newAngka = angka.filter((a) => {
+  a >= 3;
 });
 
 console.log(newAngka);
