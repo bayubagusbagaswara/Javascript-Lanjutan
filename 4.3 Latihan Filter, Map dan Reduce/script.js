@@ -8,23 +8,14 @@
 7. Simpan di DOM
 =============== */
 
-const videos = document.querySelectorAll("[data-duration]");
-console.log(videos);
+const videos = Array.from(document.querySelectorAll("[data-duration]"));
+const jsLanjut = videos.filter((video) =>
+  video.textContent.includes("Javascript Lanjutan")
+);
+console.log(jsLanjut); // hasilnya ada 8
 
 /* =============== Noted
-1. Ambil atribut yang ada data-duration 
-2. Tapi, hasil dari videos adalah NodeList. Yaitu kumpulan Node dan ini beda dengan Array, jadi tidak bisa di kasih map, filter, reduce 
-NodeList(12)
-0: li
-1: li
-2: li
-3: li
-4: li
-5: li
-6: li
-7: li
-8: li
-9: li
-10: li
-11: li
+- Ubah dulu NodeList menjadi Array
+- filter semua videos nya dan cari yang ada tulisan Javascript Lanjutan
+- video adalah tiap elemen yang ada didalam array videos
 =============== */
