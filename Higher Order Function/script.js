@@ -1,12 +1,9 @@
 /* =============== Contoh Abstraksi =============== */
-// Coba bandingkan code sebelumnya dengan code dibawah
-
-console.log(sum(range(1, 10)));
-
-// Hasilnya 55
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
 
 /* =============== Noted
-- ada function sum dna function range
-- ketika manggil 2 function bersamaan / ada function yang menjadi parameter dari function lain itu jauh lebih simple. Karena kerumitan disembunyikan di dalam function
+- Bagaimana kalau ingin melooping sebanyak 100x, 100x ? harus merubah secara manual (tidak dinamis)
 
 =============== */
