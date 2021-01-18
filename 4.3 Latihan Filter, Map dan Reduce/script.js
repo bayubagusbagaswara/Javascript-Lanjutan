@@ -1,13 +1,19 @@
 const videos = Array.from(document.querySelectorAll("[data-duration]"));
 const jsLanjut = videos
   .filter((video) => video.textContent.includes("Javascript Lanjutan"))
-  .map((item) => item.dataset.duration);
-
+  .map((item) => item.dataset.duration)
+  .map((waktu) => {
+    // durasi 10.30, pecah jadi array ["10", "30"] -> split
+    const parts = waktu.split(".");
+    // kalikan parts ke 0 dengan 60 ditambah
+    return parts;
+  });
 console.log(jsLanjut);
-// Hasilnya ["11.18", "21.40", "12.10", "20.43", "26.38", "17.33", "10.39", "17.31"]
 
 /* =============== Noted
-- ambil durasi masing-masing video
-- method dataset untuk mengambil atribut data-.....
-- gunakan chaining method
+- ubah durasinya dari STRING menjadi INTEGER
+- parts adalah array yang menampung waktu [10,30]
+- part adalah tiap elemen dalam array parts
+
+
 =============== */
