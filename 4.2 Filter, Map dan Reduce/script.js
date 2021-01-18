@@ -1,29 +1,21 @@
-/* =============== Reduce =============== */
+/* =============== Method Chaining / Berantai =============== */
 const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
-const newAngka = angka.reduce((accumulator, currentValue) => {
-  console.log(`Jumlah angka = ${accumulator}`);
-  console.log(`Isi Elemen sekarang = ${currentValue}`);
-  console.log(
-    `Jumlah = ${accumulator} + ${currentValue} = ${accumulator + currentValue}`
-  );
-  console.log("===");
+const hasil = angka
+  // filter dulu elemen yg sesuai
+  .filter((a) => a > 5)
+  //   8, 9, 9
+  // map membuat array baru dgn elemen baru * 3
+  .map((a) => a * 3)
+  //   24, 27, 27
+  // dibagi 2 dulu
+  .map((a) => a / 2)
+  // jumlahkan semua elemen array baru nya
+  .reduce((acc, curr) => acc + curr);
 
-  return accumulator + currentValue;
-}, 5); // sebenarnya ada nilai default untuk menentukan nilai awal, misal ditulis 5
-console.log(`Total jumlah elemen = ${newAngka}`);
-
-/* =============== Code sederhananya =============== */
-const newAngka1 = angka.reduce(
-  (accumulator, currentValue) => accumulator + currentValue,
-  5
-);
-console.log(`Total jumlah elemen = ${newAngka1}`);
+console.log(hasil); // Hasil 39
 
 /* =============== Noted 
-- Reduce : melakukan sesuatu terhadap seluruh elemen pada array nya
-- pengennya jumlahkan semua elemen array nya
-- Reduce punya 2 argument,
-- Argument/parameter 1 adalah Accumulator (hasil dari prosesnya, seperti penjumlahannya). Hasil akumulasinya
-- Argument/parameter 2 adalah Current Value (elemen array yang sedang dilooping / saat ini)
+- cari angka > 5. kemudian hasilnya kalikan 3, kemudian dibagi 2, terakhir jumlahkan semuanya
+- Method Chaining : bisa menggabungkan fungsi-fungsi pada Higher Order Function dalam sekali Ekesekusi (gak perlu disimpan dalam variabel dulu)
 =============== */
