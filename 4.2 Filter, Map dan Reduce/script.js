@@ -2,16 +2,19 @@
 
 const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
-// coba gunakan for biasa
-const newAngka = [];
-for (let i = 0; i < angka.length; i++) {
-  if (angka[i] >= 3) {
-    newAngka.push(angka[i]);
-  }
-}
+// menggunakan Filter
+const newAngka = angka.filter(function (a) {
+  return a >= 3;
+});
+
 console.log(newAngka);
-// Hasilnya ada 5 angka yakni 8,9,4,3,9
+// Hasilnya 8,9,4,3,9
 
 /* =============== Noted 
-- mencari angka >= 3
+- langsung panggil Array mana yang akan di filter.
+- dan filter memiliki callback function nya
+- a merepresentasikan tiap-tiap elemen di dalam Array Angka
+- elemen ke 1 = -1
+- elemen ke 2 = 8
+- elemen ke 3 = 9 dst...
 =============== */
