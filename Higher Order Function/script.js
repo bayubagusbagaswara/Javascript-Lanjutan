@@ -1,20 +1,12 @@
 /* =============== Contoh Abstraksi =============== */
+// Coba bandingkan code sebelumnya dengan code dibawah
 
-let total = 0,
-  count = 1;
-while (count <= 10) {
-  total += count;
-  count += 1;
-  console.log(total);
-}
-// console.log(total);
+console.log(sum(range(1, 10)));
 
 // Hasilnya 55
 
 /* =============== Noted
-- menghitung sebuah
-- selamat count <= 10 
-- maka isi total dengan dijumlahkan dengan count
-- kemudian isi count ditambahkan dengan 1 (atau hasil count += 1)
+- ada function sum dna function range
+- ketika manggil 2 function bersamaan / ada function yang menjadi parameter dari function lain itu jauh lebih simple. Karena kerumitan disembunyikan di dalam function
 
 =============== */
