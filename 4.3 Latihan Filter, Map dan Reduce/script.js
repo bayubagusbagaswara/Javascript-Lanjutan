@@ -21,4 +21,3 @@ const jmlVideo = videos.filter((video) =>
 ).length;
 const pJmlVideo = document.querySelector(".jumlah-video");
 pJmlVideo.textContent = `${jmlVideo} Video`;
-console.log(detik);
