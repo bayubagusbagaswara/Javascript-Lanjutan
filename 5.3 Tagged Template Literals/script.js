@@ -2,15 +2,14 @@ const nama = "Bayu Bagaswara";
 const umur = 24;
 
 // function
-function coba(strings, nama, umur) {
-  return strings;
+function coba(strings, ...values) {
+  return values;
 }
 const str = coba`Halo, nama saya ${nama}, saya${umur} tahun`;
 console.log(str);
 
 /* =============== Noted
-- cara ubah template literals biasa menjadi tagged template, dengan menulisakan namafunction didepan string nya
-- Jadi string template literals, seolah-olah akan masuk jadi parameter pada function 
-- Parameter strings akan memecah string dari template literals yang dipisahkan dengan expression nya. Disimpan dalam array
-- Expression menjadi parameter function
+- ada kala kita tidak tau berapa banyak parameter yang kita tampung.
+- di Javascript bisa menampung semua parameter sekaligus dengan menggunakan Rest Parameter. ada titik 3 kali
+- values adalah Rest Paramater yang isinya array yang menampung seluruh expression dari template literals nya
 =============== */
