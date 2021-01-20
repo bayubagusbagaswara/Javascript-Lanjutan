@@ -17,3 +17,9 @@ Iterable Object:
 5. Map
 6. Set
 7. User-defined Iterables
+
+# For .. in
+
+    "Creates a loop only iterating over enumerable."
+    "Hanya untuk enumerable. Enumerable adalah properti pada Object."
+    "Object bisa dilooping isinya menggunakan for..in"
