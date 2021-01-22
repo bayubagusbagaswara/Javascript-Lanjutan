@@ -42,7 +42,7 @@
     "activityBar.border": "#2b68db",
     "activityBar.activeBorder": "#2b68db",
     "activityBar.activeBackground": "#00376b",
-    "activityBarBadge.background": "#35d7dd",
+    "activityBarBadge.background": "#16d8df9c",
 
     // statusBar bawah
     "statusBar.foreground": "#ffff",
