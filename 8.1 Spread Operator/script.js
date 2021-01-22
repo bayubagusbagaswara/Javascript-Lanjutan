@@ -24,10 +24,9 @@ for (let i = 0; i < liMhs.length; i++) {
   mhs.push(liMhs[i].textContent);
 }
 console.log(mhs);
-// atau pake map, karena li bentuknya NodeList maka di spread dulu agar jadi Array
+/**
+ * atau pake map, karena li bentuknya NodeList maka di spread dulu agar jadi Array
+ */
+
 const mhs = [...liMhs].map((m) => m.textContent);
 console.log(mhs);
-
-/* =============== h1 jika di hover akan ada animasi per huruf =============== */
-// 1. pecah string menjadi single element dengan Spread
-// 2. sisipkan span ke masing-masing huruf, jika huruf tersebut disorot
