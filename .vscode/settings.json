@@ -45,9 +45,8 @@
     "activityBarBadge.background": "#16d8df9c",
 
     // statusBar bawah
-    "statusBar.foreground": "#ffff",
+    "statusBar.foreground": "#ffffff6c",
     "statusBar.background": "#171717",
-    "statusBarItem.hoverBackground": "#1b2230",
     "statusBarItem.activeBackground": "#1b6a6d",
 
     // terminal bawah
@@ -59,7 +58,6 @@
   },
 
   "php.suggest.basic": false,
-
   "php.validate.executablePath": "E:/XAMPP/php/php.exe",
   "liveServer.settings.port": 5502,
   "emmet.includeLanguages": {
