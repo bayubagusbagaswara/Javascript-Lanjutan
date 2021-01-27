@@ -14,6 +14,9 @@
     "functions": {
       "foreground": "#398be9",
       "fontStyle": "bold"
+    },
+    "variables": {
+      "fontStyle": "italic bold"
     }
   },
 
